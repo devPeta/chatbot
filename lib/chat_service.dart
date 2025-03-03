@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ChatService {
-  final String apiKey = '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';
+  final String apiKey = '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'; // Replace with your valid OpenRouter API key
   final String apiUrl = 'https://openrouter.ai/api/v1/chat/completions';
 
   Future<String> getChatResponse(String userMessage) async {
@@ -12,11 +12,11 @@ class ChatService {
         headers: {
           'Authorization': 'Bearer $apiKey',
           'Content-Type': 'application/json',
-          'HTTP-Referer': 'com.example.chatbot',  // Replace with your app domain
-          'X-Title': 'Chat Bot',
+          'HTTP-Referer': 'https://your-registered-site.com', // Replace with your registered site URL
+          'X-Title': 'com.example.chatbot', // Replace with your app name
         },
         body: jsonEncode({
-          "model": "deepseek-ai/deepseek-chat",  // Use DeepSeek Chat model
+          "model": "deepseek/deepseek-r1:free", // Match the model in Python
           "messages": [
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": userMessage}
