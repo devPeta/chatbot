@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'chat_service.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
 
+// ignore: use_key_in_widget_constructors
 class ChatScreen extends StatefulWidget {
   @override
   _ChatScreenState createState() => _ChatScreenState();
@@ -10,7 +11,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _controller = TextEditingController();
   final ChatService _chatService = ChatService();
-   final List<Map<String, String>> messages = []; // Store chat messages
+  final List<Map<String, String>> messages = []; // Store chat messages
 
   void sendMessage() async {
     String userMessage = _controller.text.trim();
@@ -31,7 +32,10 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Chat with AI")),
+      backgroundColor: Colors.white,
+      appBar: AppBar(title: Text("Chat with AI"),
+      backgroundColor: Colors.white,
+      ),
       body: Column(
         children: [
           Expanded(
@@ -44,7 +48,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
                 return BubbleSpecialThree(
                   text: msg["content"]!,
-                  color: isUser ? Colors.blue : Colors.grey.shade300,
+                  color: isUser ? Colors.blue.withOpacity(0.4) : Colors.grey.shade300,
                   tail: true,
                   isSender: isUser,
                 );
@@ -64,9 +68,16 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                 ),
-                IconButton(
-                  icon: Icon(Icons.send),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  padding: EdgeInsets.all(8),
+                  child: IconButton(
+                  icon: Icon(Icons.send, color: Colors.blue),
                   onPressed: sendMessage,
+                  ),
                 ),
               ],
             ),
