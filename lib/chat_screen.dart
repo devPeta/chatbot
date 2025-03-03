@@ -22,7 +22,10 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Chatbot")),
+      backgroundColor: Colors.white,
+      appBar: AppBar(title: Text("Chatbot"),
+      backgroundColor: Colors.white,
+      ),
       body: Column(
         children: [
           Expanded(child: Padding(
@@ -40,7 +43,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.send),
+                  icon: Icon(Icons.send, color: Colors.blue.withOpacity(0.5),),
                   onPressed: sendMessage,
                 )
               ],
