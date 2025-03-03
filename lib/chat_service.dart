@@ -12,11 +12,11 @@ class ChatService {
         headers: {
           'Authorization': 'Bearer $apiKey',
           'Content-Type': 'application/json',
-          'HTTP-Referer': 'https://your-registered-site.com', // Replace with your registered site URL
-          'X-Title': 'com.example.chatbot', // Replace with your app name
+          'HTTP-Referer': 'https://your-registered-site.com', 
+          'X-Title': 'com.example.chatbot', 
         },
         body: jsonEncode({
-          "model": "deepseek/deepseek-r1:free", // Match the model in Python
+          "model": "deepseek/deepseek-r1:free", 
           "messages": [
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": userMessage}

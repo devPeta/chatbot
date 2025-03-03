@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'chat_service.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
 
-// ignore: use_key_in_widget_constructors
 class ChatScreen extends StatefulWidget {
   @override
   _ChatScreenState createState() => _ChatScreenState();
