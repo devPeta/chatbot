@@ -55,7 +55,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(16.0),
             child: Row(
               children: [
                 Expanded(
@@ -67,6 +67,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                 ),
+                SizedBox(width: 4),
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.4),
